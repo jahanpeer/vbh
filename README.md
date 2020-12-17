@@ -1,2 +1,1 @@
-# minurl.github.io
-url shortener for me.
+NDBM Dynamic URL shortener
