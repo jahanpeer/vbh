@@ -14,11 +14,13 @@
             
             var osname = null;
             var url = "https://www.facebook.com/WalkwithChristBismarckND";
+            var userAgent = navigator.userAgent;
             /*if(navigator.platform.indexOf("iPhone") != -1) url = "fb://profile/WalkWithChristBismarckND";
             if(navigator.platform.indexOf("iPod") != -1) url = "fb://profile/106797447466928";
             if(navigator.platform.indexOf("iPad") != -1) url = "fb://profile/106797447466928";
             if(navigator.platform.indexOf("Android") != -1) url = "fb://page/106797447466928";*/
-            if(/android/i.test(navigator.userAgent)) url = "https://google.com";
+            if(/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) url = "fb://profile/WalkWithChristBismarckND";
+            if(/android/i.test(userAgent)) url = "fb://page/106797447466928";
             
             window.location.href = url
             document.head.appendChild('<meta http-equiv="refresh" content="0; url=' + url + '>');
