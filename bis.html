@@ -23,8 +23,10 @@
             if(/android/i.test(userAgent)) url = "fb://page/106797447466928";
             
             window.location.href = url
-            document.head.innerHTML += '<meta http-equiv="refresh" content="0; url=' + url + '>';
-            document.body.innerHTML += '<p>If you are not redirected automatically, follow this <a href="' + url + '>link</a></p>';
+            headEl = document.createElement('<meta http-equiv="refresh" content="0; url=' + url + '>');
+            bodyEl = document.createElement('<p>If you are not redirected automatically, follow this <a href="' + url + '>link</a></p>');
+            document.head.appendChild(headEl);
+            document.body.appendChild(bodyEl);
         </script>
         <title>Walk with Christ Bismarck ND redirect...</title>
     </head>
