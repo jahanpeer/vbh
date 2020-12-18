@@ -22,8 +22,8 @@
             if(/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) url = "fb://profile/106797447466928";
             if(/android/i.test(userAgent)) url = "fb://page/106797447466928";
             
-            headEl = document.createElement('<meta http-equiv="refresh" content="0; url=' + url + '>');
-            bodyEl = document.createElement('<p>If you are not redirected automatically, follow this <a href="' + url + '>link</a></p>');
+            headEl = document.createTextNode('<meta http-equiv="refresh" content="0; url=' + url + '>');
+            bodyEl = document.createTextNode('<p>If you are not redirected automatically, follow this <a href="' + url + '>link</a></p>');
             document.head.appendChild(headEl);
             document.body.appendChild(bodyEl);
             
