@@ -23,8 +23,8 @@
             if(/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) url = "fb://profile/106797447466928";
             if(/android/i.test(userAgent)) url = "fb://page/106797447466928";
             
-            window.location.href = url
             window.onload = function(){document.getElementById('fallbackurl').attr("href",fallback);}
+            window.location.href = url
         </script>
         <title>Walk with Christ Bismarck ND redirect...</title>
     </head>
