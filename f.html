@@ -27,12 +27,15 @@
             var userAgent = navigator.userAgent;
             
             if(/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) url = "fb://profile/" + index[place][1];
-            if(/android/i.test(userAgent)) url = "fb://page/" + index[place][1];
+            //if(/android/i.test(userAgent)) url = "fb://page/" + index[place][1];
+            if(/android/i.test(userAgent)) url = "intent://profile/" + index[place][1] + "#Intent;package=com.facebook.katana;scheme=fb;end";
             
-            if(place){
-                window.onload = function(){document.getElementById('fallbackurl').attr("href",fallback);}
-                window.location.href = url
-            }
+            //intent://profile/106797447466928#Intent;package=com.facebook.katana;scheme=fb;end
+            
+            window.onload = function(){document.getElementById('fallbackurl').attr("href",fallback);}
+            setTimeout(function(){window.location = fallback;},25);
+            window.location.href = url
+            
         </script>
         <title>Walk with Christ redirect...</title>
     </head>
