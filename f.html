@@ -26,7 +26,7 @@
             var url = "https://www.facebook.com/WalkwithChrist" + index[place][0];
             var userAgent = navigator.userAgent;
             
-            if(/iPad|iPhone|iPod|Macintosh/.test(userAgent) && ! window.MSStream) url = "fb://profile/" + index[place][1];
+            if(/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) url = "fb://profile/" + index[place][1];
             //if(/android/i.test(userAgent)) url = "fb://page/" + index[place][1];
             if(/android/i.test(userAgent)) url = "intent://profile/" + index[place][1] + "#Intent;package=com.facebook.katana;scheme=fb;end";
             
