@@ -20,7 +20,8 @@
                 'wc': ["WatfordCityND","109827677349852"],
                 'mt': ["MidwestTribes","102395724776458"]
             }
-            
+            query = window.location.href.split("?")[1];
+            alert(query);
             var osname = null;
             var fallback = "https://www.facebook.com/WalkwithChristBismarckND";
             var url = "https://www.facebook.com/WalkwithChristBismarckND";
@@ -33,7 +34,7 @@
             if(/android/i.test(userAgent)) url = "fb://page/106797447466928";
             
             window.onload = function(){document.getElementById('fallbackurl').attr("href",fallback);}
-            window.location.href = url
+            //window.location.href = url
         </script>
         <title>Walk with Christ Bismarck ND redirect...</title>
     </head>
