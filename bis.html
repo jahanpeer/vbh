@@ -25,10 +25,7 @@
             var fallback = "https://www.facebook.com/WalkwithChrist" + index[place][0];
             var url = "https://www.facebook.com/WalkwithChrist" + index[place][0];
             var userAgent = navigator.userAgent;
-            /*if(navigator.platform.indexOf("iPhone") != -1) url = "fb://profile/WalkWithChristBismarckND";
-            if(navigator.platform.indexOf("iPod") != -1) url = "fb://profile/106797447466928";
-            if(navigator.platform.indexOf("iPad") != -1) url = "fb://profile/106797447466928";
-            if(navigator.platform.indexOf("Android") != -1) url = "fb://page/106797447466928";*/
+            
             if(/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) url = "fb://profile/" + index[place][1];
             if(/android/i.test(userAgent)) url = "fb://page/" + index[place][1];
             
