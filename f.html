@@ -28,7 +28,6 @@
             
             if(/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) url = "fb://profile/" + index[place][1];
             if(/android/i.test(userAgent)) url = "fb://page/" + index[place][1];
-            if(/linux/i.test(userAgent)) url = "fb://page/" + index[place][1];
             
             if(place){
                 window.onload = function(){document.getElementById('fallbackurl').attr("href",fallback);}
