@@ -35,7 +35,7 @@
             window.onload = function(){document.getElementById('fallbackurl').attr("href",fallback);}
             //setTimeout(function(){window.location = fallback;},50);
             //window.location.href = url
-            alert(userAgent)
+            alert(/android/i.test(userAgent))
             
         </script>
         <title>Walk with Christ redirect...</title>
