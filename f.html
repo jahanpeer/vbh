@@ -27,8 +27,8 @@
             var userAgent = navigator.userAgent;
             
             if(/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) url = "fb://profile/" + index[place][1];
-            if(/android/i.test(userAgent)) url = "fb://page/" + index[place][1];
-            //if(/android/i.test(userAgent)) url = "intent://profile/" + index[place][1] + "#Intent;package=com.facebook.katana;scheme=fb;end";
+            //if(/android/i.test(userAgent)) url = "fb://page/" + index[place][1];
+            if(/android/i.test(userAgent)) url = "intent://page/" + index[place][1] + "#Intent;package=com.facebook.katana;scheme=fb;end";
             
             //intent://profile/106797447466928#Intent;package=com.facebook.katana;scheme=fb;end
             
