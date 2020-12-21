@@ -1,9 +1,7 @@
-
 <!DOCTYPE HTML>
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <!-- <meta http-equiv="refresh" content="0; url=http://example.com"> -->
         <script type="text/javascript">
             var index = {
                 'bi': ["BismarckND","106797447466928"],
@@ -27,16 +25,11 @@
             var userAgent = navigator.userAgent;
             
             if(/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) url = "fb://profile/" + index[place][1];
-            //if(/android/i.test(userAgent)) url = "fb://page/" + index[place][1];
             if(/android/i.test(userAgent)) url = "intent://page/" + index[place][1] + "#Intent;package=com.facebook.katana;scheme=fb;end";
-            
-            //intent://profile/106797447466928#Intent;package=com.facebook.katana;scheme=fb;end
-            
+                        
             window.onload = function(){document.getElementById('fallbackurl').attr("href",fallback);}
             setTimeout(function(){window.location = fallback;},100);
-            window.location = url
-            //alert(/android/i.test(userAgent)) true in android on chrome
-            
+            window.location = url            
         </script>
         <title>Walk with Christ redirect...</title>
     </head>
