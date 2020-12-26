@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0WQV2Z21KM"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-0WQV2Z21KM');
+        </script>
+        <script type="text/javascript">
+            var osname = null;
+            var fallback = "https://www.youtube.com/WalkwithChrist";
+            var url = "https://www.youtube.com/WalkwithChrist";
+            var userAgent = navigator.userAgent;
+            
+            if((/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) || /android/i.test(userAgent)) url = "vnd.youtube://user/channel/UCvsWm99x4hy8hAyZW1b1BNg";
+                        
+            window.onload = function(){document.getElementById('fallbackurl').attr("href",fallback);}
+            setTimeout(function(){window.location = fallback;},100);
+            window.location = url            
+        </script>
+        <title>Walk with Christ redirect...</title>
+    </head>
+    <body>
+        <h1>If you are not automatically redirected, click <a id="fallbackurl">here</a></h1>
+    </body>
+</html>
