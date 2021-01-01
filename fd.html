@@ -15,9 +15,9 @@
             var userloc = null;
             function setUserLoc(x){
                 userloc = x;
+                alert(userloc);
             }
             navigator.geolocation.getCurrentPosition(setUserLoc);
-            alert(userloc);
             var osname = null;
             var fallback = "https://www.youtube.com/WalkwithChrist";
             var url = "https://www.youtube.com/WalkwithChrist";
