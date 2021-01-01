@@ -13,7 +13,10 @@
         </script>
         <script type="text/javascript">
             var userloc = null;
-            navigator.geolocation.getCurrentPosition(x => (userloc = x;));
+            function setUserLoc(x){
+                userloc = x;
+            }
+            navigator.geolocation.getCurrentPosition(setUserLoc);
             alert(userloc);
             var osname = null;
             var fallback = "https://www.youtube.com/WalkwithChrist";
