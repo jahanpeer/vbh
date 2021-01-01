@@ -16,6 +16,10 @@
             function userLocCallback(x){
                 if(x){
                     //alert(x);
+                    var coords = x.coords
+                    var userLoc = [coords.latitude, coords.longitude];
+                    var testPoly = [[40,-120],[50,-120],[50,90],[40,90]];
+                    console.log(window.pointInPolygon(testPoly,userloc));
                     
                 }
             }
