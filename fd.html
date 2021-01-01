@@ -11,13 +11,15 @@
 
           gtag('config', 'G-0WQV2Z21KM');
         </script>
+        <script type="text/javascript" src="point-in-polygon.js"></script>
         <script type="text/javascript">
-            var userloc = null;
-            function setUserLoc(x){
-                userloc = x;
-                alert(userloc);
+            function userLocCallback(x){
+                if(x){
+                    //alert(x);
+                    
+                }
             }
-            navigator.geolocation.getCurrentPosition(setUserLoc);
+            navigator.geolocation.getCurrentPosition(userLocCallback);
             var osname = null;
             var fallback = "https://www.youtube.com/WalkwithChrist";
             var url = "https://www.youtube.com/WalkwithChrist";
