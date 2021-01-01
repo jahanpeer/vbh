@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html lang="en-US">
     <head>
@@ -15,12 +16,13 @@
         <script type="text/javascript">
             function userLocCallback(x){
                 if(x){
-                    //alert(x);
+					var zones = [[[-102.7056884765625,49.005447494058096],[-102.6947021484375,47.84265762816538],[-101.678466796875,47.82053186746053],[-100.6732177734375,47.908978314728714],[-100.65673828125,49.001843917978526]],[[-101.217041015625,47.12247581664114],[-101.07421875,46.39998810407942],[-100.14038085937499,46.619261036171515],[-100.43701171875,47.18224592701489]]];
                     var coords = x.coords
-                    var userLoc = [coords.latitude, coords.longitude];
+                    var userLoc = [coords.longitude, coords.latitude];
                     var testPoly = [[40,-120],[50,-120],[50,90],[40,90]];
-                    console.log(window.pointInPolygon(testPoly,userLoc));
-                    
+                    console.log(userLoc)
+                    console.log(window.pointInPolygon(zones[0],userLoc));
+                    console.log(window.pointInPolygon(zones[1],userLoc)); 
                 }
             }
             navigator.geolocation.getCurrentPosition(userLocCallback);
