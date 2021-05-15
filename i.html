@@ -11,8 +11,8 @@
             }
             place = window.location.href.split("?")[1].split("&")[0];
             var osname = null;
-            var fallback = index[place][0];
-            var url = index[place][0];
+            var fallback = index[place];
+            var url = index[place];
             //var userAgent = navigator.userAgent;
             
             window.onload = function(){document.getElementById('fallbackurl').setAttribute("href",fallback);}
