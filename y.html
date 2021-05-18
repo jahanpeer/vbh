@@ -19,7 +19,7 @@
             var url = "https://www.youtube.com/WalkwithChrist";
             var userAgent = navigator.userAgent;
             
-            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)) url = "vnd.youtube://user/UCvsWm99x4hy8hAyZW1b1BNg";
+            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)) url = "vnd.youtube://user/channel/UCvsWm99x4hy8hAyZW1b1BNg";
                         
             window.onload = function(){document.getElementById('fallbackurl').attr("href",fallback);}
             setTimeout(function(){window.location = fallback;},100);
