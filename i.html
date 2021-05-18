@@ -4,21 +4,20 @@
         <meta charset="UTF-8">
         <script type="text/javascript">
             var index = {
-              'no': 'https://instagram.com/walkwithchrist.nodak/',
-              'so': 'https://instagram.com/walkwithchrist.sodak/',
-              'ca': 'https://instagram.com/walkwithchrist.campus/'
-
+              'no': 'walkwithchrist.nodak',
+              'so': 'walkwithchrist.sodak',
+              'ca': 'walkwithchrist.campus'
             }
-            place = window.location.href.split("?")[1].split("&")[0];
+            var place = window.location.href.split("?")[1].split("&")[0];
             var osname = null;
-            var fallback = index[place];
-            var url = index[place];
-            //var userAgent = navigator.userAgent;
+            var fallback = 'https://instagram.com/' + index[place] + '/';
+            var url = 'https://instagram.com/' + index[place] + '/';
+            var userAgent = navigator.userAgent;
             
             window.onload = function(){document.getElementById('fallbackurl').setAttribute("href",fallback);}
             
-            //if(/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) url = "fb://profile/" + index[place][1];
-            //if(/android/i.test(userAgent)) url = "intent://page/" + index[place][1] + "#Intent;package=com.facebook.katana;scheme=fb;end";
+            if(/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) url = "instagram://user?username=" + index[place];
+            if(/android/i.test(userAgent)) url = 'intent://instagram.com/_u/' + index[place] + '/#Intent;package=com.instagram.android;scheme=https;end';
             
             setTimeout(function(){window.location = fallback;},100);
             window.location = url;
