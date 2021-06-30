@@ -37,7 +37,7 @@
             var url = "https://www.facebook.com/" + index[place][0];
             var userAgent = navigator.userAgent;
             
-            window.onload = function(){document.getElementById('fallbackurl').setAttribute("href",fallback);}
+            window.onload = function(){document.getElementById('fallbackurl').setAttribute("href",fallback); document.title = 'Walk with Christ: ' + index[place]}
             
             if(/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) url = "fb://profile/" + index[place][1];
             if(/android/i.test(userAgent)) url = "intent://page/" + index[place][1] + "#Intent;package=com.facebook.katana;scheme=fb;end";
