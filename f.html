@@ -36,9 +36,8 @@
                 if(/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) url = "fb://profile/" + index[place][1];
                 if(/android/i.test(userAgent)) url = "intent://page/" + index[place][1] + "#Intent;package=com.facebook.katana;scheme=fb;end";
                 
-                //setTimeout(function(){window.location = fallback;},100);
-                //window.location = url;
-                alert("loaded!")
+                setTimeout(function(){window.location = fallback;},100);
+                window.location = url;
             }
         </script>
         <title>Walk with Christ redirect...</title>
