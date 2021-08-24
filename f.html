@@ -2,47 +2,50 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <script defer type="text/javascript">
-            var index = {                                //legacy page links included to ensure that old QR codes still work properly
-                'bi': ["WalkwithChristBismarckND","106797447466928"],
-                'mi': ["WalkwithChristMinotND","109846400530300"],
-                'fa': ["WalkwithChristFargoND","108536547329771"],
-                'bh': ["WalkwithChristBlackHills","100418944819585"],
-                'gf': ["WalkwithChristGrandForksND","102302324777572"],
-                'ab': ["WalkwithChristDakotaPlains","107674490900712"], //legacy Aberdeen, SD page
-                'pi': ["WalkwithChristDakotaPlains","107674490900712"], //legacy Pierre, SD page
-                'em': ["WalkwithChristEasternMT","110161430589876"],
-                'wi': ["WalkwithChristBakken","102518748090712"],       //legacy Williston, ND page
-                'mn': ["WalkwithChristGrandForksND","102302324777572"], //legacy NW Minnisota Page
-                'di': ["WalkwithChristBakken","102518748090712"],       //legacy Dickinson, ND page
-                'wc': ["WalkwithChristBakken","102518748090712"],       //legacy Watford City, ND page
-                'mt': ["WalkwithChristMidwestTribes","102395724776458"],
-                'ba': ["WalkwithChristBakken","102518748090712"],
-                'dp': ["WalkwithChristDakotaPlains","107674490900712"],
-                'cc': ["ComeUntoChrist","120694114630885"]
-            }
-            place = window.location.href.split("?")[1].split("&")[0];
-            var osname = null;
-            var fallback = "https://www.facebook.com/" + index[place][0];
-            var url = "https://www.facebook.com/" + index[place][0];
-            var userAgent = navigator.userAgent;
-            
+        <script type="text/javascript">
             window.onload = function() {
-                document.getElementById('fallbackurl').setAttribute("href",fallback);
-                document.title = 'Walk with Christ: ' + index[place]
+                var index = {                                //legacy page links included to ensure that old QR codes still work properly
+                    'bi': ["WalkwithChristBismarckND","106797447466928"],
+                    'mi': ["WalkwithChristMinotND","109846400530300"],
+                    'fa': ["WalkwithChristFargoND","108536547329771"],
+                    'bh': ["WalkwithChristBlackHills","100418944819585"],
+                    'gf': ["WalkwithChristGrandForksND","102302324777572"],
+                    'ab': ["WalkwithChristDakotaPlains","107674490900712"], //legacy Aberdeen, SD page
+                    'pi': ["WalkwithChristDakotaPlains","107674490900712"], //legacy Pierre, SD page
+                    'em': ["WalkwithChristEasternMT","110161430589876"],
+                    'wi': ["WalkwithChristBakken","102518748090712"],       //legacy Williston, ND page
+                    'mn': ["WalkwithChristGrandForksND","102302324777572"], //legacy NW Minnisota Page
+                    'di': ["WalkwithChristBakken","102518748090712"],       //legacy Dickinson, ND page
+                    'wc': ["WalkwithChristBakken","102518748090712"],       //legacy Watford City, ND page
+                    'mt': ["WalkwithChristMidwestTribes","102395724776458"],
+                    'ba': ["WalkwithChristBakken","102518748090712"],
+                    'dp': ["WalkwithChristDakotaPlains","107674490900712"],
+                    'cc': ["ComeUntoChrist","120694114630885"]
+                }
+                place = window.location.href.split("?")[1].split("&")[0];
+                var osname = null;
+                var fallback = "https://www.facebook.com/" + index[place][0];
+                var url = "https://www.facebook.com/" + index[place][0];
+                var userAgent = navigator.userAgent;
+                
+                // document.onload = function() {
+                    document.getElementById('fallbackurl').setAttribute("href",fallback);
+                    document.title = 'Walk with Christ: ' + index[place]
+                // }
+                
+                if(/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) url = "fb://profile/" + index[place][1];
+                if(/android/i.test(userAgent)) url = "intent://page/" + index[place][1] + "#Intent;package=com.facebook.katana;scheme=fb;end";
+                
+                //setTimeout(function(){window.location = fallback;},100);
+                //window.location = url;
+                alert("loaded!")
             }
-            
-            if(/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) url = "fb://profile/" + index[place][1];
-            if(/android/i.test(userAgent)) url = "intent://page/" + index[place][1] + "#Intent;package=com.facebook.katana;scheme=fb;end";
-            
-            setTimeout(function(){window.location = fallback;},100);
-            window.location = url;
         </script>
         <title>Walk with Christ redirect...</title>
     </head>
     <body>
         <h1>If you are not automatically redirected, click <a id="fallbackurl">here</a></h1>
-        <script src="//static.getclicky.com/101323966.js"></script>
+        <script async src="//static.getclicky.com/101323966.js"></script>
         <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101323966ns.gif" /></p></noscript>
     </body>
 </html>
