@@ -1,35 +1,40 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <script type="text/javascript">
-            window.onload = function() {
-                var index = {
-                  'no': 'walkwithchrist.nodak',
-                  'so': 'walkwithchrist.sodak',
-                  'ca': 'scriptures.in.the.dakotas'
-                }
-                var place = window.location.href.split("?")[1].split("&")[0];
-                var osname = null;
-                var fallback = 'https://instagram.com/' + index[place] + '/';
-                var url = 'https://instagram.com/' + index[place] + '/';
-                var userAgent = navigator.userAgent;
 
-                document.getElementById('fallbackurl').setAttribute("href",fallback);
-                document.title = 'Walk with Christ: ' + index[place]
+<head>
+  <meta charset="UTF-8">
+  <script type="text/javascript">
+    var index = {
+      'no': 'walkwithchrist.nodak',
+      'so': 'walkwithchrist.sodak',
+      'ca': 'scriptures.in.the.dakotas'
+    }
+    var place = window.location.href.split("?")[1].split("&")[0];
+    var osname = null;
+    var fallback = 'https://instagram.com/' + index[place] + '/';
+    var url = 'https://instagram.com/' + index[place] + '/';
+    var userAgent = navigator.userAgent;
 
-                if(/iPad|iPhone|iPod/.test(userAgent) && ! window.MSStream) url = "instagram://user?username=" + index[place];
-                if(/android/i.test(userAgent)) url = 'intent://instagram.com/_u/' + index[place] + '/#Intent;package=com.instagram.android;scheme=https;end';
+    document.getElementById('fallbackurl').setAttribute("href", fallback);
+    document.title = 'Walk with Christ: ' + index[place]
 
-                setTimeout(function(){window.location = fallback;},100);
-                window.location = url;
-            }
-        </script>
-        <title>Walk with Christ redirect...</title>
-    </head>
-    <body>
-        <h1>If you are not automatically redirected, click <a id="fallbackurl">here</a></h1>
-        <script async src="//static.getclicky.com/101323966.js"></script>
-        <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101323966ns.gif" /></p></noscript>
-    </body>
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) url = "instagram://user?username=" + index[place];
+    if (/android/i.test(userAgent)) url = 'intent://instagram.com/_u/' + index[place] + '/#Intent;package=com.instagram.android;scheme=https;end';
+  
+    window.onload = function(){
+      setTimeout(function () { window.location = fallback; }, 100);
+      window.location = url;
+    }
+  </script>
+  <title>Walk with Christ redirect...</title>
+</head>
+
+<body>
+  <h1>If you are not automatically redirected, click <a id="fallbackurl">here</a></h1>
+  <script async src="//static.getclicky.com/101323966.js"></script>
+  <noscript>
+    <p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101323966ns.gif" /></p>
+  </noscript>
+</body>
+
 </html>
