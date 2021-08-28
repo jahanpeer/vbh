@@ -8,33 +8,38 @@
 
 <body>
   <h1>If you are not automatically redirected, click <a id="fallbackurl">here</a></h1>
-  <script async src="//static.getclicky.com/101323966.js"></script>
   <script type="text/javascript">
     var index = {
       'no': 'walkwithchrist.nodak',
       'so': 'walkwithchrist.sodak',
       'ca': 'scriptures.in.the.dakotas'
     }
+
     var place = window.location.href.split("?")[1].split("&")[0];
-    var osname = null;
     var fallback = 'https://instagram.com/' + index[place] + '/';
     var url = 'https://instagram.com/' + index[place] + '/';
-    var userAgent = navigator.userAgent;
-
-    document.getElementById('fallbackurl').setAttribute("href", fallback);
-    document.title = 'Walk with Christ: ' + index[place]
-
-    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) url = "instagram://user?username=" + index[place];
-    if (/android/i.test(userAgent)) url = 'intent://instagram.com/_u/' + index[place] + '/#Intent;package=com.instagram.android;scheme=https;end';
-  
-    window.onload = function(){
-      setTimeout(function () { window.location = fallback; }, 100);
+    
+    window.onload = function() {
+      setTimeout(function() { window.location = fallback; }, 100);
       window.location = url;
     }
-  </script>
-  <noscript>
-    <p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101323966ns.gif" /></p>
-  </noscript>
-</body>
+    
+    document.getElementById('fallbackurl').setAttribute("href", fallback);
+    document.title = 'Walk with Christ: ' + index[place]
+    
+    var userAgent = navigator.userAgent;
 
+    var appsScript = "https://script.google.com/macros/s/AKfycbwwd1VKB_y9rrdX88kL6ptpKX3sR0vBvtlQNWNDS5anIScpr5Tab-KvFgpFNKhft-1CJw/exec"
+    var loggingUrl = appsScript + "?id=i-" + place + "&userAgent=" + encodeURIComponent(userAgent)
+    var logger = new XMLHttpRequest()
+    logger.open("GET", loggingUrl, true)
+    logger.setRequestHeader("Content-Type", "text/plain;charset=utf-8")
+    logger.send(null)
+
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) 
+      url = "instagram://user?username=" + index[place];
+    if (/android/i.test(userAgent)) 
+      url = 'intent://instagram.com/_u/' + index[place] + '/#Intent;package=com.instagram.android;scheme=https;end';
+  </script>
+</body>
 </html>
