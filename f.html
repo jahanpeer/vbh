@@ -33,21 +33,23 @@
     var url = "https://www.facebook.com/" + index[place][0];
     
     window.onload = function() {
-      setTimeout(function() { window.location = fallback; }, 100);
+      setTimeout(function() {
+        window.location = fallback;
+      }, 100);
       window.location = url;
     }
 
     document.getElementById('fallbackurl').setAttribute("href", fallback);
-    document.title = 'Walk with Christ: ' + index[place]
+    document.title = 'Walk with Christ: ' + index[place];
     
     var userAgent = navigator.userAgent;
 
-    var appsScript = "https://script.google.com/macros/s/AKfycbwwd1VKB_y9rrdX88kL6ptpKX3sR0vBvtlQNWNDS5anIScpr5Tab-KvFgpFNKhft-1CJw/exec"
-    var loggingUrl = appsScript + "?id=f-" + place + "&userAgent=" + encodeURIComponent(userAgent)
-    var logger = new XMLHttpRequest()
-    logger.open("GET", loggingUrl, true)
-    logger.setRequestHeader("Content-Type", "text/plain;charset=utf-8")
-    logger.send(null)
+    var appsScript = "https://script.google.com/macros/s/AKfycbwwd1VKB_y9rrdX88kL6ptpKX3sR0vBvtlQNWNDS5anIScpr5Tab-KvFgpFNKhft-1CJw/exec";
+    var loggingUrl = appsScript + "?id=f-" + place + "&userAgent=" + encodeURIComponent(userAgent);
+    var logger = new XMLHttpRequest();
+    logger.open("GET", loggingUrl, true);
+    logger.setRequestHeader("Content-Type", "text/plain;charset=utf-8");
+    logger.send(null);
 
     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) 
       url = "fb://profile/" + index[place][1];
